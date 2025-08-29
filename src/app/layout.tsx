@@ -31,10 +31,10 @@ export default function RootLayout({
               <NavigationMenuList>
                 <NavigationMenuItem className="flex flex-row">
                   <NavigationMenuLink asChild>
-                    <Link href="/akatsuki">Akatsuki</Link>
+                    <Link href="/characters">characters</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <Link href="/characters">characters</Link>
+                    <Link href="/akatsuki">Akatsuki</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link href="/clans">clans</Link>
