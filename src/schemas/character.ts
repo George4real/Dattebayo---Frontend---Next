@@ -46,7 +46,7 @@ const familySchema = z.object({
 const personalSchema = z.object({
   birthdate: z.string().optional(),
   sex: z.string(),
-  age: ageSchema.optional(),
+  // age: ageSchema.optional(),
 //   height: heightSchema,
 //   weight: weightSchema,
 //   bloodType: z.string(),
