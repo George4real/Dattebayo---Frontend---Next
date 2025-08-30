@@ -1,8 +1,14 @@
+import CharacterList from "@/components/CharacterList";
+import getCollections from "@/server-action/getCollection";
+import { charactersAPIResponseSchema } from "@/schemas/character"
 
-export default function page() {
+export default async function page() {
+
+  const charactersAPIResponse = await getCollections('characters')
+  const characters = charactersAPIResponseSchema.parse(charactersAPIResponse)
   return (
     <>
-     <h1>Characters</h1>   
+      <CharacterList characters={characters}/>
     </>
   )
 }
