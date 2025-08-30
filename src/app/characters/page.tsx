@@ -1,4 +1,4 @@
-import CharacterList from "@/components/CharacterList";
+import CharacterList from "@/components/character/CharacterList";
 import getCollections from "@/server-action/getCollection";
 import { charactersAPIResponseSchema } from "@/schemas/character"
 
