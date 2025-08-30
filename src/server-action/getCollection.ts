@@ -1,6 +1,8 @@
 "use server"
 
-export default async function getCollections(collection: string) {
+import { cache } from "react"
+
+export const getCollections = cache(async (collection: string) => {
 
     //Get
     const url = `${process.env.DATTEBAYO_URL}/${collection}`
@@ -9,7 +11,7 @@ export default async function getCollections(collection: string) {
             'Content-Type': 'application/json'
         },
         next: {
-            tags: [`${collection}`]             
+            tags: [`${collection}`]
         }
     })
     const json = await req.json()
@@ -25,4 +27,4 @@ export default async function getCollections(collection: string) {
             break;
     }
 
-}
+})
