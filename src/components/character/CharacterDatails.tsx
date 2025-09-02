@@ -2,7 +2,7 @@
 
 import { Character } from "@/schemas/character"
 import CharacterImageCarousel from "./CharacterImageCarousel"
-import { JutsusBadge } from "./JutsusBadge"
+import DialogJutsus from "./DialogJutsus"
 
 export default function CharacterDatails({ character }: { character: Character }) {
 
@@ -15,10 +15,9 @@ export default function CharacterDatails({ character }: { character: Character }
                 {character.personal.clan && <p><span className="font-bold">Clan:</span> {character.personal.clan}</p>}
                 <p><span className="font-bold">Sex:</span> {character.personal.sex}</p>
                 <p><span className="font-bold">First Apparition:</span> {character.debut.anime}</p>
-                <div >
-
-                <p><span className="font-bold">Jutsus:</span></p>
-                    <JutsusBadge jutsus={character.jutsu}/>
+                <div className="flex gap-2">
+                    <p><span className="font-bold">Jutsus:</span></p>
+                    <DialogJutsus character={character}/>
                 </div>
             </div>
         </div>
