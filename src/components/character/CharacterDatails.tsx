@@ -1,6 +1,6 @@
 "use client"
 
-import { Character } from "@/schemas/character"
+import { Character } from "@/schemas/CharacterSchema"
 import CharacterImageCarousel from "./CharacterImageCarousel"
 import DialogJutsus from "./DialogJutsus"
 

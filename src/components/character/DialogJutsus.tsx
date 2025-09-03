@@ -4,13 +4,11 @@ import {
     Dialog,
     DialogClose,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { JutsusBadge } from "./JutsusBadge"
-import { Character } from "@/schemas/character"
+import { Character } from "@/schemas/CharacterSchema"
 import { Button } from "../ui/button"
 
 export default function DialogJutsus({ character }: { character: Character }) {

@@ -1,6 +1,6 @@
 "use client"
 
-import { Characters } from "@/schemas/character"
+import { Characters } from "@/schemas/CharacterSchema"
 import CharacterCard from "./CharacterCard"
 
 export default function CharacterList({ characters }: { characters: Characters }) {

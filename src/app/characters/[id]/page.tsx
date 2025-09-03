@@ -1,5 +1,5 @@
 import CharacterDatails from "@/components/character/CharacterDatails"
-import { characterAPIResponseSchema } from "@/schemas/character"
+import { characterAPIResponseSchema } from "@/schemas/CharacterSchema"
 import { getCollectionById } from "@/server-action/getCollectionById"
 
 export default async function page(props: PageProps<'/characters/[id]'>) {
