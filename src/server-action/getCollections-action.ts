@@ -2,10 +2,10 @@
 
 import { cache } from "react"
 
-export const getCollections = cache(async (collection: string) => {
+export const getCollections = cache(async (collection: string, page: string) => {
 
     //Get
-    const url = `${process.env.DATTEBAYO_URL}/${collection}`
+    const url = `${process.env.DATTEBAYO_URL}/${collection}?page=${page}`
     const req = await fetch(url, {
         headers: {
             'Content-Type': 'application/json'
