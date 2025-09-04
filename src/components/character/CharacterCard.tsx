@@ -14,10 +14,14 @@ export default function CharacterCard({ character }: { character: Character }) {
     return (
         <>
             <Card className="pt-0">
-                <Image 
-                    src={character.images[0] || "/public/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg"} 
-                    alt={character.name} width={1000} height={0} priority 
-                    className="rounded-xl"></Image>
+                <div className="w-full h-64 relative">
+                    <Image
+                        src={character.images[0] || "/public/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg"}
+                        alt={character.name} height={0} priority
+                        fill
+                        className="rounded-xl object-cover">
+                    </Image>
+                </div>
                 <CardHeader>
                     <CardTitle className="text-center text-xl">{character.name}</CardTitle>
                 </CardHeader>
