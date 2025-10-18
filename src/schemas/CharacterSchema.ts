@@ -1,25 +1,5 @@
 import { z } from 'zod';
 
-// Schema para el objeto age
-const ageSchema = z.object({
-  "Part I": z.string().optional(),
-  "Part II": z.string().optional(),
-  "Academy Graduate": z.string().optional()
-});
-
-// Schema para el objeto height
-const heightSchema = z.object({
-  "Part I": z.string(),
-  "Part II": z.string(),
-  "Blank Period": z.string().optional()
-});
-
-// Schema para el objeto weight
-const weightSchema = z.object({
-  "Part I": z.string(),
-  "Part II": z.string()
-});
-
 // Schema para el objeto debut
 const debutSchema = z.object({
   manga: z.string().optional(),
@@ -47,32 +27,14 @@ const personalSchema = z.object({
   clan: z.union([z.string(), z.array(z.string())]).optional(),
 });
 
-// Schema para el objeto ninjaRank
-const ninjaRankSchema = z.object({
-  "Part I": z.string(),
-  Gaiden: z.string()
-});
-
-// Schema para el objeto rank
-const rankSchema = z.object({
-  ninjaRank: ninjaRankSchema,
-  ninjaRegistration: z.string()
-});
-
-// Schema para el objeto voiceActors
-const voiceActorsSchema = z.object({
-  japanese: z.array(z.string()),
-  english: z.array(z.string())
-});
-
 // Schema principal para el personaje
 export const characterAPIResponseSchema = z.object({
   id: z.number(),
   name: z.string(),
   images: z.array(z.string().url()),
-  debut: debutSchema,
+  debut: debutSchema.optional(),
   family: familySchema.optional(),
-  jutsu: z.array(z.string()),
+  jutsu: z.array(z.string()).optional(),
   natureType: z.array(z.string()).optional(),
   personal: personalSchema,
 });
