@@ -11,21 +11,27 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-
+import { Suspense } from "react";
+import { ImageSkeleton } from "./ImageSkeleton";
 
 export default function CharacterCard({ character }: { character: Character }) {
+
+    
+
   return (
     <>
       <Card className="pt-0">
         <div className="relative">
-          <Image
-            src={character.images[1]}
-            alt={character.name}
-            width={975}
-            height={730}
-            priority
-            className="rounded-xl object-cover"
-          />
+          <Suspense fallback={<ImageSkeleton />}>
+            <Image
+              src={character.images[1]}
+              alt={character.name}
+              width={975}
+              height={730}
+              priority
+              className="rounded-xl object-cover"
+            />
+          </Suspense>
         </div>
         <CardHeader>
           <CardTitle className="text-center text-xl">
